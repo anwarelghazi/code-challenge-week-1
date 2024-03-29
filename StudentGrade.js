@@ -1,16 +1,25 @@
-
-[23:30, 24/03/2024] Fanax: //function to determine student grade
-function calculateGrade(mark) {
-    if (mark > 79 && mark <= 100) {
-        return 'A';
-}else if (mark >= 60 && mark <= 79) {
-    return 'B';
-}else if (mark >= 50 && mark <= 59) {
-    return 'C'
-}else if (mark >= 40 && mark <=49) {
-    return 'D';
-}else if (mark >= 0 && mark < 40) {
-    return 'E';
+//function to determine student grade
+function getGrade(marks)
+ {if(marks < 0 || marks > 100) 
+    {console.log("kindly enter marks between 0 and 100.");
 }
-}
-//call main function to start the programme
+    else {
+        let grades;
+        if(marks > 79){
+            return "the students grade is: A";
+        }else if (marks >= 60 && marks <= 79) {
+            return "the students grade is: B";
+        }else if (marks >= 50 && marks <= 59) {
+            return "the student grade is: C";
+        }else if (marks >= 40 && marks <= 49){
+            return "the student grade is: D";
+        }else {
+            return "the student grade is: E";} 
+        }
+    }
+    console.log(getGrade(80))
+    console.log(getGrade(70))
+    console.log(getGrade(61))
+    console.log(getGrade(50))
+    console.log(getGrade(30))
+    console.log(getGrade(0))

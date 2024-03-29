@@ -1,4 +1,4 @@
-function  calculateNetSalary(basicSalary, benefits) {
+function calculateNetSalary(basicSalary, benefits) {
     //tax rate based on the provider KRA
     const taxRate = [
         {min:0, max:24000, rate:15},
@@ -21,4 +21,21 @@ for (const rate of taxRateS) {
         taxableIncome = (rate.max - rate.min + 1);
     }else {
         tax = taxableIncome * (rate.rate / 100);
-       …
+        break;
+    }
+}
+//calculate NHIF deductions
+const nhifdeductions = grossSalary * nhifRate;
+// calculate NSSF deductions
+const nssfDeductions = grossSalary * nssfRate;
+//calculate net salary
+const netSalary = grossSalary - tax - nhifdeductions - nssfDeduction
+return{
+    grossSalary: grossSalary,
+    tax: tax,
+    nhifdeductions : nhifdeductions,
+    nssfDeductions : nssfDeductions,
+    netSalary : netSalary
+};
+
+}

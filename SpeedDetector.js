@@ -1,19 +1,18 @@
-function to determine speed
- calculateDemeritPoint(speed) {
-    const speedLimit ();//= 70;
-    const kmPerKmOverLimit = 5;
-    const pfunctionointPerKmOverLimit = 1;
-    if (speed < speedLimit) {
-        console.log ("Ok")
-        return 0;
-    }else {
-        const kmOverLimit = speed - speedLimit;
-        const demeritPoints =Math.floor(kmOverLimit / kmPerKmDemeritPoints)
-        if (demeritPoint > 12) {
-            console.log("license suspended");
-        }else {
-            console.log("points:", demeritPoints);
+function speedDetector(speed){
+    //give variables to speedmlimit and km per point
+    const speedlimit = 70;
+    const kmPerPoint = 5;
+    //checki if the speed is less than or equal to speed limit 
+    if(speed <= speedlimit) {
+        console.log("ok");
+    }else{
+        const points = Math.floor((speed - speedlimit) / kmPerPoint);
+        //calculate points 
+        if (points >= 12){
+            console.log('license suspended');
+        }else{
+            console.log("points",points)
         }
-        return demeritPoints;
     }
 }
+speedDetector(200)
